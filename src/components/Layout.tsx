@@ -8,7 +8,7 @@ function Layout() {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div className="container">
-          <Link className="navbar-brand" to="/">WebHost</Link>
+          <Link className="navbar-brand" to="/">HospitOS</Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,13 +23,13 @@ function Layout() {
 
           <div className="collapse navbar-collapse" id="ftco-nav">
             <ul className="navbar-nav ml-auto">
-              <li className={`nav-item${isActive('/')}`}><Link to="/" className="nav-link">Home</Link></li>
-              <li className={`nav-item${isActive('/about')}`}><Link to="/about" className="nav-link">About</Link></li>
-              <li className={`nav-item${isActive('/domain')}`}><Link to="/domain" className="nav-link">Domain</Link></li>
-              <li className={`nav-item${isActive('/hosting')}`}><Link className="nav-link" to="/hosting">Hosting</Link></li>
-              <li className={`nav-item${isActive('/blog')}`}><Link to="/blog" className="nav-link">Blog</Link></li>
-              <li className={`nav-item${isActive('/contact')}`}><Link to="/contact" className="nav-link">Contact</Link></li>
-              <li className="nav-item cta"><Link to="/contact" className="nav-link"><span>Get started</span></Link></li>
+              <li className={`nav-item${isActive('/')}`}><Link to="/" className="nav-link">Inicio</Link></li>
+              <li className={`nav-item${isActive('/about')}`}><Link to="/about" className="nav-link">Quiénes somos</Link></li>
+              <li className={`nav-item${isActive('/descargas')}`}><Link to="/descargas" className="nav-link">Descargas</Link></li>
+              <li className={`nav-item${isActive('/roles')}`}><Link className="nav-link" to="/roles">Roles</Link></li>
+              <li className={`nav-item${isActive('/notas')}`}><Link to="/notas" className="nav-link">Notas</Link></li>
+              <li className={`nav-item${isActive('/contact')}`}><Link to="/contact" className="nav-link">Contacto</Link></li>
+              <li className="nav-item cta"><Link to="/descargas" className="nav-link"><span>Descargar la app</span></Link></li>
             </ul>
           </div>
         </div>
@@ -43,49 +43,29 @@ function Layout() {
           <div className="row mb-5">
             <div className="col-md">
               <div className="ftco-footer-widget mb-4">
-                <h2 className="ftco-heading-2">WebHost</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                  <li className="ftco-animate"><a href="#"><span className="icon-twitter"></span></a></li>
-                  <li className="ftco-animate"><a href="#"><span className="icon-facebook"></span></a></li>
-                  <li className="ftco-animate"><a href="#"><span className="icon-instagram"></span></a></li>
-                </ul>
+                <h2 className="ftco-heading-2">HospitOS</h2>
+                <p>El expediente, los signos vitales y la alerta crítica, en el bolsillo de quien está junto a la cama.</p>
               </div>
             </div>
             <div className="col-md">
               <div className="ftco-footer-widget mb-4 ml-md-5">
-                <h2 className="ftco-heading-2">Unseful Links</h2>
+                <h2 className="ftco-heading-2">Navegación</h2>
                 <ul className="list-unstyled">
-                  <li><a href="#" className="py-2 d-block">Servers</a></li>
-                  <li><a href="#" className="py-2 d-block">Windos Hosting</a></li>
-                  <li><a href="#" className="py-2 d-block">Cloud Hosting</a></li>
-                  <li><a href="#" className="py-2 d-block">OS Servers</a></li>
-                  <li><a href="#" className="py-2 d-block">Linux Servers</a></li>
-                  <li><a href="#" className="py-2 d-block">Policy</a></li>
+                  <li><Link to="/" className="py-2 d-block">Inicio</Link></li>
+                  <li><Link to="/about" className="py-2 d-block">Quiénes somos</Link></li>
+                  <li><Link to="/roles" className="py-2 d-block">Roles</Link></li>
+                  <li><Link to="/descargas" className="py-2 d-block">Descargas</Link></li>
+                  <li><Link to="/notas" className="py-2 d-block">Notas</Link></li>
+                  <li><Link to="/contact" className="py-2 d-block">Contacto</Link></li>
                 </ul>
               </div>
             </div>
             <div className="col-md">
               <div className="ftco-footer-widget mb-4">
-                <h2 className="ftco-heading-2">Navigational</h2>
-                <ul className="list-unstyled">
-                  <li><a href="#" className="py-2 d-block">Home</a></li>
-                  <li><a href="#" className="py-2 d-block">Domain</a></li>
-                  <li><a href="#" className="py-2 d-block">Hosting</a></li>
-                  <li><a href="#" className="py-2 d-block">About</a></li>
-                  <li><a href="#" className="py-2 d-block">Blog</a></li>
-                  <li><a href="#" className="py-2 d-block">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md">
-              <div className="ftco-footer-widget mb-4">
-                <h2 className="ftco-heading-2">Office</h2>
+                <h2 className="ftco-heading-2">Contacto</h2>
                 <div className="block-23 mb-3">
                   <ul>
-                    <li><span className="icon icon-map-marker"></span><span className="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                    <li><a href="#"><span className="icon icon-phone"></span><span className="text">+2 392 3929 210</span></a></li>
-                    <li><a href="#"><span className="icon icon-envelope"></span><span className="text">info@yourdomain.com</span></a></li>
+                    <li><a href="mailto:contacto@hospitos.app"><span className="icon icon-envelope"></span><span className="text">contacto@hospitos.app</span></a></li>
                   </ul>
                 </div>
               </div>

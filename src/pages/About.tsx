@@ -9,8 +9,8 @@ function About() {
           <div className="container-fluid">
             <div className="row slider-text align-items-center justify-content-center" data-scrollax-parent="true">
               <div className="col-md-8 mt-5 text-center col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <p className="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span className="mr-2"><Link to="/">Home</Link></span> <span>About</span></p>
-                <h1 className="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
+                <p className="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span className="mr-2"><Link to="/">Inicio</Link></span> <span>Quiénes somos</span></p>
+                <h1 className="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Quiénes somos</h1>
               </div>
             </div>
           </div>
@@ -24,131 +24,10 @@ function About() {
             </div>
             <div className="col-md-6 ftco-animate p-md-5">
               <div className="row">
-                <div className="col-md-12 nav-link-wrap mb-5">
-                  <div className="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a className="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">What we do</a>
-
-                    <a className="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">Our mission</a>
-
-                    <a className="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">Our goal</a>
-                  </div>
-                </div>
-                <div className="col-md-12 d-flex align-items-center">
-
-                  <div className="tab-content ftco-animate" id="v-pills-tabContent">
-
-                    <div className="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
-                      <div>
-                        <h2 className="mb-4">Offering Reliable Hosting</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-                      </div>
-                    </div>
-
-                    <div className="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
-                      <div>
-                        <h2 className="mb-4">Exceptional Web Solutions</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-                      </div>
-                    </div>
-
-                    <div className="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
-                      <div>
-                        <h2 className="mb-4">Help Our Customer</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ftco-section testimony-section">
-        <div className="container">
-          <div className="row justify-content-center mb-5 pb-3">
-            <div className="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <span className="subheading">Customer Says</span>
-              <h2 className="mb-4">Our satisfied customer says</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-            </div>
-          </div>
-          <div className="row ftco-animate">
-            <div className="col-md-12">
-              <div className="carousel-testimony owl-carousel ftco-owl">
-                <div className="item">
-                  <div className="testimony-wrap p-4 pb-5">
-                    <div className="user-img mb-5" style={{ backgroundImage: 'url(/template/images/person_1.jpg)' }}>
-                      <span className="quote d-flex align-items-center justify-content-center">
-                        <i className="icon-quote-left"></i>
-                      </span>
-                    </div>
-                    <div className="text">
-                      <p className="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                      <p className="name">Mark Web</p>
-                      <span className="position">Marketing Manager</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <div className="testimony-wrap p-4 pb-5">
-                    <div className="user-img mb-5" style={{ backgroundImage: 'url(/template/images/person_2.jpg)' }}>
-                      <span className="quote d-flex align-items-center justify-content-center">
-                        <i className="icon-quote-left"></i>
-                      </span>
-                    </div>
-                    <div className="text">
-                      <p className="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                      <p className="name">Mark Web</p>
-                      <span className="position">Interface Designer</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <div className="testimony-wrap p-4 pb-5">
-                    <div className="user-img mb-5" style={{ backgroundImage: 'url(/template/images/person_3.jpg)' }}>
-                      <span className="quote d-flex align-items-center justify-content-center">
-                        <i className="icon-quote-left"></i>
-                      </span>
-                    </div>
-                    <div className="text">
-                      <p className="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                      <p className="name">Mark Web</p>
-                      <span className="position">UI Designer</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <div className="testimony-wrap p-4 pb-5">
-                    <div className="user-img mb-5" style={{ backgroundImage: 'url(/template/images/person_1.jpg)' }}>
-                      <span className="quote d-flex align-items-center justify-content-center">
-                        <i className="icon-quote-left"></i>
-                      </span>
-                    </div>
-                    <div className="text">
-                      <p className="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                      <p className="name">Mark Web</p>
-                      <span className="position">Web Developer</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="item">
-                  <div className="testimony-wrap p-4 pb-5">
-                    <div className="user-img mb-5" style={{ backgroundImage: 'url(/template/images/person_1.jpg)' }}>
-                      <span className="quote d-flex align-items-center justify-content-center">
-                        <i className="icon-quote-left"></i>
-                      </span>
-                    </div>
-                    <div className="text">
-                      <p className="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                      <p className="name">Mark Web</p>
-                      <span className="position">System Analyst</span>
-                    </div>
-                  </div>
+                <div className="col-md-12">
+                  <h2 className="mb-4">Qué es HospitOS</h2>
+                  <p>HospitOS nace de una observación incómoda: la información que decide una urgencia casi nunca está donde ocurre la urgencia. Está en la computadora del control de enfermería, en una hoja impresa que alguien se llevó, en la memoria de quien pasó visita hace dos horas. El personal clínico camina; los datos, no.</p>
+                  <p>HospitOS invierte esa relación. Todo el expediente —quién es el paciente, qué se le diagnosticó, cómo respira ahora mismo, qué medicamento le toca y quién se lo dio— vive en el teléfono que el médico y el enfermero ya traen encima. Se abre escaneando el código de la pulsera. Se actualiza solo. Y cuando algo se sale de rango, no espera a que alguien lo consulte: interrumpe.</p>
                 </div>
               </div>
             </div>
@@ -158,41 +37,21 @@ function About() {
 
       <section className="ftco-section">
         <div className="container">
-          <div className="row justify-content-center mb-5 pb-5">
-            <div className="col-md-7 text-center heading-section ftco-animate">
-              <h2 className="mb-4">Team Specialist</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+          <div className="row justify-content-center mb-5 pb-3">
+            <div className="col-md-8 text-center heading-section ftco-animate">
+              <span className="subheading">Un dispositivo cualquiera</span>
+              <h2 className="mb-4">Se adapta a lo que tengas a la mano</h2>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4 mb-5 ftco-animate">
+            <div className="col-md-6 mb-5 ftco-animate">
               <div className="block-10">
-                <div className="person-info mb-2">
-                  <span className="name">Jacob Smith</span>
-                  <span className="position">Co Designer</span>
-                </div>
-                <img src="/template/images/person_1.jpg" alt="" className="img-fluid mb-3" />
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p>La interfaz se rediseña sola según el aparato que la abre: barra inferior en el teléfono, riel lateral en la tablet, navegación por control remoto en la pantalla de la sala, y una versión comprimida para reloj inteligente donde solo caben los signos y la alerta.</p>
               </div>
             </div>
-            <div className="col-md-4 mb-5 ftco-animate">
+            <div className="col-md-6 mb-5 ftco-animate">
               <div className="block-10">
-                <div className="person-info mb-2">
-                  <span className="name">Aldin Henderson</span>
-                  <span className="position">Web Developer</span>
-                </div>
-                <img src="/template/images/person_3.jpg" alt="" className="img-fluid mb-3" />
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-            <div className="col-md-4 mb-5 ftco-animate">
-              <div className="block-10">
-                <div className="person-info mb-2">
-                  <span className="name">Mark Willis</span>
-                  <span className="position">Lead Web Developer</span>
-                </div>
-                <img src="/template/images/person_2.jpg" alt="" className="img-fluid mb-3" />
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <p>El monitor de cabecera tampoco requiere hardware. Cualquier teléfono puede entrar en Modo Simulador, vincularse a un paciente y comportarse como su monitor de signos vitales, con el código QR en pantalla listo para escanear.</p>
               </div>
             </div>
           </div>

@@ -14,11 +14,11 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog-single" element={<BlogSingle />} />
+        <Route path="/notas" element={<Blog />} />
+        <Route path="/notas/nota-de-alcance" element={<BlogSingle />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/domain" element={<Domain />} />
-        <Route path="/hosting" element={<Hosting />} />
+        <Route path="/descargas" element={<Domain />} />
+        <Route path="/roles" element={<Hosting />} />
       </Route>
     </Routes>
   )
