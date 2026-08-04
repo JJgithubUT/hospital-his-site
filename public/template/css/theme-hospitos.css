@@ -86,12 +86,16 @@ h1, h2, h3, h4, h5, h6,
   color: var(--hos-accent) !important;
 }
 .ftco-navbar-light .navbar-nav > .nav-item.cta > a,
-.ftco-navbar-light.scrolled .nav-item.cta > a {
+.ftco-navbar-light .navbar-nav > .nav-item.cta > button,
+.ftco-navbar-light.scrolled .nav-item.cta > a,
+.ftco-navbar-light.scrolled .nav-item.cta > button {
   background: var(--hos-accent) !important;
   color: var(--hos-on-accent) !important;
 }
 .ftco-navbar-light .navbar-nav > .nav-item.cta > a span,
-.ftco-navbar-light.scrolled .nav-item.cta > a span {
+.ftco-navbar-light .navbar-nav > .nav-item.cta > button span,
+.ftco-navbar-light.scrolled .nav-item.cta > a span,
+.ftco-navbar-light.scrolled .nav-item.cta > button span {
   background: none !important;
   -webkit-text-fill-color: var(--hos-on-accent) !important;
   color: var(--hos-on-accent) !important;
@@ -99,6 +103,84 @@ h1, h2, h3, h4, h5, h6,
 .ftco-navbar-light.scrolled .navbar-toggler {
   color: var(--hos-text) !important;
   border-color: var(--hos-border) !important;
+}
+
+/* Interruptor de luz: el CTA "Descargar la app" pliega/despliega el panel
+   de descarga. El track/knob imitan un switch físico; el pill se enciende
+   (fondo acento) cuando el panel está abierto. */
+.download-switch {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.55rem;
+  border: none;
+  cursor: pointer;
+  font-family: var(--hos-sans);
+}
+.download-switch-track {
+  position: relative;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.35);
+  transition: background-color 0.3s ease;
+}
+.download-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--hos-on-accent);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.download-switch.is-on .download-switch-track {
+  background: rgba(20, 20, 20, 0.55);
+}
+.download-switch.is-on .download-switch-knob {
+  transform: translateX(14px);
+}
+
+.download-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(20, 20, 20, 0.96);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+.download-panel.is-open {
+  max-height: 280px;
+  border-bottom-color: var(--hos-border);
+}
+.download-panel-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+}
+.download-panel-eyebrow {
+  font-family: var(--hos-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hos-muted);
+}
+.download-panel-inner h2 {
+  margin: 0.3rem 0 0.35rem;
+  font-size: 1.4rem;
+}
+.download-panel-inner p {
+  margin: 0;
+  color: var(--hos-muted);
 }
 
 /* ── Botones ──────────────────────────────────────────────────────── */
@@ -318,4 +400,41 @@ h1, h2, h3, h4, h5, h6,
 }
 .ftco-footer a:hover {
   color: var(--hos-accent) !important;
+}
+
+/* ── Vara de Esculapio 3D + partículas (sección "Qué es HospitOS") ── */
+.hospitos-hero-section {
+  position: relative;
+  overflow: hidden;
+}
+.hospitos-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.hospitos-particles canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+.hospitos-hero-content {
+  position: relative;
+  z-index: 1;
+}
+.rod3d-wrap {
+  width: 100%;
+  height: clamp(260px, 32vw, 380px);
+}
+.rod3d-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hospitos-particles {
+    display: none;
+  }
 }

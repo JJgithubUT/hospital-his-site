@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
 function Layout() {
   const location = useLocation()
   const isActive = (path: string) => (location.pathname === path ? ' active' : '')
+  const [downloadOpen, setDownloadOpen] = useState(false)
 
   return (
     <>
@@ -29,8 +31,31 @@ function Layout() {
               <li className={`nav-item${isActive('/roles')}`}><Link className="nav-link" to="/roles">Roles</Link></li>
               <li className={`nav-item${isActive('/notas')}`}><Link to="/notas" className="nav-link">Notas</Link></li>
               <li className={`nav-item${isActive('/contact')}`}><Link to="/contact" className="nav-link">Contacto</Link></li>
-              <li className="nav-item cta"><Link to="/descargas" className="nav-link"><span>Descargar la app</span></Link></li>
+              <li className="nav-item cta">
+                <button
+                  type="button"
+                  className={`nav-link download-switch${downloadOpen ? ' is-on' : ''}`}
+                  onClick={() => setDownloadOpen((open) => !open)}
+                  aria-expanded={downloadOpen}
+                  aria-controls="download-panel"
+                >
+                  <span className="download-switch-track"><span className="download-switch-knob"></span></span>
+                  <i className="fa-regular fa-circle-down"></i>
+                  <span>Descargar la app</span>
+                </button>
+              </li>
             </ul>
+          </div>
+        </div>
+
+        <div id="download-panel" className={`download-panel${downloadOpen ? ' is-open' : ''}`} aria-hidden={!downloadOpen}>
+          <div className="container download-panel-inner">
+            <div>
+              <span className="download-panel-eyebrow">HospitOS</span>
+              <h2>Descargar HospitOS</h2>
+              <p>Prototipo funcional para Android.</p>
+            </div>
+            <a href="/downloads/HospitOS.apk" download className="btn btn-primary p-3 px-4">Descargar APK</a>
           </div>
         </div>
       </nav>

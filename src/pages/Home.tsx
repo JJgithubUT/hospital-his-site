@@ -1,4 +1,8 @@
+import { lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
+
+const AsclepiusRod3D = lazy(() => import('../components/AsclepiusRod3D'))
+const HospitosParticles = lazy(() => import('../components/HospitosParticles'))
 
 function Home() {
   return (
@@ -21,12 +25,20 @@ function Home() {
         </div>
       </section>
 
-      <section className="ftco-section bg-light">
-        <div className="container">
-          <div className="row justify-content-center mb-5 pb-3">
-            <div className="col-md-8 text-center heading-section ftco-animate">
+      <section className="ftco-section bg-light hospitos-hero-section">
+        <Suspense fallback={null}>
+          <HospitosParticles />
+        </Suspense>
+        <div className="container hospitos-hero-content">
+          <div className="row align-items-center mb-5 pb-3">
+            <div className="col-md-8 heading-section ftco-animate">
               <h2 className="mb-4">Qué es HospitOS</h2>
               <p>HospitOS nace de una observación incómoda: la información que decide una urgencia casi nunca está donde ocurre la urgencia. Está en la computadora del control de enfermería, en una hoja impresa que alguien se llevó, en la memoria de quien pasó visita hace dos horas. El personal clínico camina; los datos, no. HospitOS invierte esa relación: todo el expediente vive en el teléfono que el médico y el enfermero ya traen encima, se abre escaneando el código de la pulsera, se actualiza solo, y cuando algo se sale de rango, no espera a que alguien lo consulte: interrumpe.</p>
+            </div>
+            <div className="col-md-4 ftco-animate">
+              <Suspense fallback={null}>
+                <AsclepiusRod3D />
+              </Suspense>
             </div>
           </div>
         </div>
