@@ -1,0 +1,321 @@
+/*
+  HospitOS — capa de tokens de marca sobre la plantilla base.
+  Paleta y tipografía tomadas de docs/descripcion-hospitos.html.
+  No modifica layout ni componentes: solo color, fuentes y detalles
+  visuales (bordes, radios, sombras) para que las cajas heredadas de
+  la plantilla lean bien sobre fondo oscuro.
+*/
+
+:root {
+  --hos-bg: #141414;
+  --hos-surface: #1e1e1e;
+  --hos-surface2: #252525;
+  --hos-border: #333330;
+  --hos-text: #f5f5f0;
+  --hos-muted: #8b8b82;
+  --hos-accent: #f0a090;
+  --hos-accent-dim: #c06050;
+  --hos-stable: #50d870;
+  --hos-attention: #e8e030;
+  --hos-critical: #f04060;
+  --hos-on-accent: #141414;
+
+  --hos-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo, Consolas, monospace;
+  --hos-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--hos-sans);
+  background-color: var(--hos-bg);
+  color: var(--hos-text);
+}
+
+a {
+  color: var(--hos-accent);
+}
+a:hover {
+  color: var(--hos-accent-dim);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.navbar-brand,
+.ftco-heading-2 {
+  font-family: var(--hos-mono);
+  letter-spacing: -0.03em;
+  color: var(--hos-text) !important;
+}
+
+/* ── Navbar ───────────────────────────────────────────────────────── */
+/* Transparente y pegada al borde superior desde el inicio; al hacer scroll
+   la plantilla le agrega .scrolled (JS) — en vez del fondo blanco original
+   usamos una superficie oscura translúcida con blur, animada con transition. */
+.ftco_navbar,
+.ftco-navbar-light {
+  background: transparent !important;
+  top: 0 !important;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, -webkit-backdrop-filter 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.ftco-navbar-light.scrolled {
+  background: rgba(20, 20, 20, 0.78) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--hos-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
+.ftco-navbar-light .navbar-brand,
+.navbar-dark .navbar-brand,
+.ftco-navbar-light.scrolled .navbar-brand {
+  color: var(--hos-text) !important;
+  font-family: var(--hos-mono);
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link,
+.ftco-navbar-light.scrolled .nav-link {
+  color: var(--hos-muted) !important;
+  font-family: var(--hos-sans);
+}
+.ftco-navbar-light .navbar-nav > .nav-item.active > a,
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover,
+.ftco-navbar-light.scrolled .nav-item.active > a {
+  color: var(--hos-accent) !important;
+}
+.ftco-navbar-light .navbar-nav > .nav-item.cta > a,
+.ftco-navbar-light.scrolled .nav-item.cta > a {
+  background: var(--hos-accent) !important;
+  color: var(--hos-on-accent) !important;
+}
+.ftco-navbar-light .navbar-nav > .nav-item.cta > a span,
+.ftco-navbar-light.scrolled .nav-item.cta > a span {
+  background: none !important;
+  -webkit-text-fill-color: var(--hos-on-accent) !important;
+  color: var(--hos-on-accent) !important;
+}
+.ftco-navbar-light.scrolled .navbar-toggler {
+  color: var(--hos-text) !important;
+  border-color: var(--hos-border) !important;
+}
+
+/* ── Botones ──────────────────────────────────────────────────────── */
+/* Fondo oscuro + borde en gradiente (en vez de relleno sólido salmón,
+   que sobre el tema oscuro se leía como un bloque naranja plano). */
+.btn-primary {
+  background-color: var(--hos-bg) !important;
+  background-image: linear-gradient(var(--hos-bg), var(--hos-bg)),
+    linear-gradient(120deg, var(--hos-accent), var(--hos-accent-dim));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid transparent !important;
+  color: var(--hos-accent) !important;
+  font-family: var(--hos-sans);
+  font-weight: 600;
+  box-shadow: none !important;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--hos-surface) !important;
+  background-image: linear-gradient(var(--hos-surface), var(--hos-surface)),
+    linear-gradient(120deg, var(--hos-accent-dim), var(--hos-accent));
+  color: var(--hos-text) !important;
+}
+.btn-primary.btn-primary-2 {
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 1px solid var(--hos-border) !important;
+  color: var(--hos-text) !important;
+}
+.btn-primary.btn-primary-2:hover {
+  border-color: var(--hos-accent) !important;
+  color: var(--hos-accent) !important;
+}
+.btn-outline-primary {
+  color: var(--hos-accent) !important;
+  border-color: var(--hos-accent) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--hos-accent) !important;
+  color: var(--hos-on-accent) !important;
+}
+
+/* ── Secciones ────────────────────────────────────────────────────── */
+.ftco-section {
+  background-color: var(--hos-bg);
+}
+.ftco-section.bg-light,
+.bg-light {
+  background-color: var(--hos-surface) !important;
+}
+
+.subheading,
+.heading-section .subheading {
+  font-family: var(--hos-mono);
+  color: var(--hos-muted) !important;
+  letter-spacing: 0.18em;
+}
+
+.heading-section h2 {
+  color: var(--hos-text) !important;
+  font-family: var(--hos-mono);
+}
+.heading-section.heading-section-white h2 {
+  color: var(--hos-text) !important;
+}
+.heading-section p,
+.heading-section.heading-section-white p {
+  color: var(--hos-muted) !important;
+}
+
+/* Cabeceras internas (About, Roles, Notas, Contacto, Descargas): la capa
+   de "overlay" original de la plantilla queda inservible (pintaba detrás
+   de la imagen), así que la reemplazamos por un scrim oscuro real para
+   que el título y las migas de pan tengan contraste sin importar la foto. */
+.owl-carousel.home-slider .slider-item:after,
+#section-counter:after {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.93), rgba(37, 37, 37, 0.8)) !important;
+}
+
+/* ── Pasos del turno ──────────────────────────────────────────────── */
+.steps {
+  background: var(--hos-surface);
+  border: 1px solid var(--hos-border);
+  border-radius: 14px;
+  padding: 2.25rem 1.25rem 1.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.steps:hover {
+  border-color: var(--hos-accent);
+  transform: translateY(-2px);
+}
+.steps h3 {
+  color: var(--hos-text);
+  font-family: var(--hos-mono);
+}
+.steps .icon {
+  background: var(--hos-surface2) !important;
+}
+.steps .icon span {
+  color: var(--hos-accent) !important;
+}
+.steps p {
+  color: var(--hos-muted);
+}
+
+/* ── Bloque de tiempo real (vitales) ──────────────────────────────── */
+.counter-wrap .block-18 {
+  background: var(--hos-surface2);
+  border: 1px solid var(--hos-border);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  width: 100%;
+}
+/* El primer bloque es la identidad del paciente (nombre + habitación),
+   no un valor crítico: debe leerse en blanco, no en rojo. */
+.counter-wrap:first-child .text .number {
+  color: var(--hos-text) !important;
+}
+.ftco-counter .text .number,
+.ftco-counter .text strong.number {
+  font-family: var(--hos-mono);
+  font-weight: 700;
+  color: var(--hos-critical) !important;
+}
+.ftco-counter .text span {
+  font-family: var(--hos-sans);
+  color: var(--hos-muted) !important;
+}
+
+/* ── Ficha técnica (tabla) ────────────────────────────────────────── */
+.table-responsive {
+  border: 1px solid var(--hos-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table th,
+.table td {
+  border-color: var(--hos-border) !important;
+}
+.table tbody tr td {
+  color: var(--hos-text) !important;
+  border-bottom-color: var(--hos-border) !important;
+}
+.table tbody tr td strong {
+  color: var(--hos-accent) !important;
+  font-family: var(--hos-mono);
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .table tbody tr td:nth-child(odd) {
+    background: var(--hos-surface2) !important;
+  }
+}
+
+/* ── Roles (tarjetas) ─────────────────────────────────────────────── */
+.block-7 {
+  background: var(--hos-surface2) !important;
+  border: 1px solid var(--hos-border);
+  border-radius: 14px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.block-7:hover {
+  border-color: var(--hos-accent);
+  transform: translateY(-2px);
+}
+.block-7 h2.heading {
+  color: var(--hos-accent) !important;
+}
+.block-7 h3.heading-2 {
+  color: var(--hos-muted) !important;
+  font-weight: 500;
+}
+.block-7 .pricing-text li {
+  color: var(--hos-text) !important;
+  opacity: 0.85;
+}
+
+/* ── Notas (listado y nota individual) ───────────────────────────── */
+.blog-entry {
+  background: var(--hos-surface2);
+  border: 1px solid var(--hos-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.blog-entry .text .heading a {
+  color: var(--hos-text) !important;
+}
+.blog-entry .text .heading a:hover,
+.blog-entry .text .heading a:focus {
+  color: var(--hos-accent) !important;
+}
+.blog-entry .text .meta-chat,
+.blog-entry .text .read {
+  color: var(--hos-muted) !important;
+}
+
+/* ── Contacto ─────────────────────────────────────────────────────── */
+.contact-section .contact-info p a {
+  color: var(--hos-accent) !important;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+.ftco-footer,
+.ftco-bg-dark {
+  background: var(--hos-surface) !important;
+  border-top: 1px solid var(--hos-border);
+}
+.ftco-footer .ftco-footer-widget h2 {
+  font-family: var(--hos-mono);
+  color: var(--hos-text) !important;
+}
+.ftco-footer p,
+.ftco-footer a {
+  color: var(--hos-muted) !important;
+}
+.ftco-footer a:hover {
+  color: var(--hos-accent) !important;
+}

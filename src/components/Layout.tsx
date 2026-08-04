@@ -65,7 +65,7 @@ function Layout() {
                 <h2 className="ftco-heading-2">Contacto</h2>
                 <div className="block-23 mb-3">
                   <ul>
-                    <li><a href="mailto:contacto@hospitos.app"><span className="icon icon-envelope"></span><span className="text">contacto@hospitos.app</span></a></li>
+                    <li><a href="mailto:juanjcbreton@gmail.com"><span className="icon icon-envelope"></span><span className="text">juanjcbreton@gmail.com</span></a></li>
                   </ul>
                 </div>
               </div>

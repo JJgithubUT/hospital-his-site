@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main", "master" ]
 
-# 1. Necesario para permitir que GitHub Pages despliegue
+# Necesario para permitir que GitHub Pages despliegue
 permissions:
   contents: read
   pages: write
@@ -44,24 +44,24 @@ jobs:
       - name: 🛠️ Compilar proyecto (TypeScript + Vite)
         run: npm run build
 
-      # 2. Configurar GitHub Pages antes de subir el artefacto
       - name: ⚙️ Configurar Pages
         uses: actions/configure-pages@v4
 
-      # 3. Subir la carpeta compilada (Vite por defecto usa 'dist')
       - name: 📦 Subir artefacto de Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
-      # 4. Desplegar el artefacto subido
-      - name: 🚀 Desplegar a GitHub Pages
-        uses: actions/deploy-pages@v4
-
-  # 5. Trabajo adicional requerido por deploy-pages
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    
+    # ⚠️ IMPORTANTE: Este entorno es obligatorio para que GitHub Actions habilite el despliegue a Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Despliegue completado
-        run: echo "Sitio desplegado correctamente"
+      - name: 🚀 Desplegar a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

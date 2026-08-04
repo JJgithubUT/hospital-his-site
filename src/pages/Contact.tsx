@@ -25,7 +25,7 @@ function Contact() {
             </div>
             <div className="w-100"></div>
             <div className="col-md-3">
-              <p><span>Email:</span> <a href="mailto:contacto@hospitos.app">contacto@hospitos.app</a></p>
+              <p><span>Email:</span> <a href="mailto:juanjcbreton@gmail.com">juanjcbreton@gmail.com</a></p>
             </div>
           </div>
           <div className="row block-9">
